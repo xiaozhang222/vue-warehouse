@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            border: 1px #333 solid;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="searchVal">
+        <ul>
+            <li v-for="item in list">
+                <span>{{item.name}}</span>
+                <span>{{item.age}}</span>
+                <span class="big" in-for></span>
+            </li>
+        </ul>
+        <button>按年龄升序</button>
+        <button>按年龄降序</button>
+        <button>按年龄的原本顺序</button>
+    </div>
+    
+</body>
+<script src="../JS/vue.min.js"></script>
+    <script>
+        var vm =new Vue({
+            el:"#app",
+            data:{
+                searchVal:"",
+                sortType:0,//1升序 -1降序 0原本顺序
+                list:[
+                    {name:"damu1",age:18,wife:"冬雨1"},
+                    {name:"damu2",age:18,wife:"冬雨2"},
+                    {name:"damu3",age:18,wife:"冬雨3"},
+                    {name:"damu4",age:18,wife:"冬雨4"},
+                    {name:"damu5",age:18,wife:"冬雨5"},
+                    {name:"damu6",age:18,wife:"冬雨6"}
+                ]
+            },
+            computed:{
+                searchList(){
+                    /*
+                       1.当前数组api可以 做过滤 
+                    */
+
+                    //以来于searchVal 过滤功能
+                    var filterArrreturn = this.list.filter((item,index,array)=>{
+                        return item.name.includer(this.searchVal)
+                    })
+
+                    //依赖于sortType
+                    // switch(sortType){
+                    //     case: 0,
+
+                    // }
+                }
+            }
+            
+        });
+    </script>
+</html>
