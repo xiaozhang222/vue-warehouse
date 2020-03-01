@@ -7,14 +7,31 @@
 </head>
 <script src="../JS/vue.js"></script>
 <body>
+
+    
    <!-- 表单标签让我们有能力在view得到数据 -->
     <div id="app">
         {{msg}}
         <!-- 插拔式 -->
     </div>
 <script>
+    /*
+        1. 声明式编程
+            区别于dom编程
+        2. 响应式数据(数据单向流  model --> view)
+            vue data对象的所有属性都会转绑给对应的vue实例
+            data中的所有数据 都是响应式数据 数据的改变会触发界面的更新
+        3. 数据双向流(model --> view  view-->model)
+            v-model 实现了数据双向流
+        4. 数据驱动
+    */
     var vm = new Vue({
-        
+        el:"#app",
+        // 声明式编程：通过插值表达式里的key+双引号 改变里面的value
+         //项目中用到的所有需要在界面上展现的数据 一定要在data配置选项中注册一把
+        data:{
+            msg:"大和之间天上来"
+        }
     })
 </script>
 </body>
