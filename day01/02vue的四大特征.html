@@ -10,10 +10,12 @@
 
     
    <!-- 表单标签让我们有能力在view得到数据 -->
-    <div id="app">
-        {{msg}}
-        <!-- 插拔式 -->
+   <div id="app"> 
+         <input type="text" v-model="val">
+         <br>
+         {{val}}
     </div>
+</body>
 <script>
     /*
         1. 声明式编程
@@ -30,9 +32,13 @@
         // 声明式编程：通过插值表达式里的key+双引号 改变里面的value
          //项目中用到的所有需要在界面上展现的数据 一定要在data配置选项中注册一把
         data:{
-            msg:"大和之间天上来"
+            // msg:"大和之间天上来",
+            val:"请输入文本"
         }
     })
+    // console.log(vm.msg)
+    // setTimeout(()=>{
+    //     vm.msg = "没有撤退可言"
+    // },2000)
 </script>
-</body>
 </html>
